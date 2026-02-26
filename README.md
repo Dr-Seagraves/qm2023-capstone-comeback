@@ -18,31 +18,32 @@ Semester-long capstone for Statistics II: Data Analytics.
 
 Run `python code/config_paths.py` to verify paths.
 
-Option A: REIT Returns & Interest Rate Sensitivity (Default Track -- Pre-
-Approved)
-Research Question: How do REIT sector returns respond to Federal Reserve interest rate changes, and which
-property types are most sensitive?
-Datasets:
-Dataset Source What It Provides
-REIT Master Panel Course data (Data/) Monthly returns, market cap, sector for 500+ REITs (2004-
-2024)
-REIT Factor Library Course data (Data/) SIZE, VALUE, MOM, QLTY, LOWVOL, REV factor premiums
-FRED Economic
-Data
-pandas-datareader
-API
-Fed Funds Rate, 30-Year Mortgage Rate, CPI,
-Unemployment
-Key Variables:
-Outcome: Monthly REIT return (%)
-Driver: Federal funds rate (lagged 1-2 months)
-Controls: Market cap, momentum factor, quality factor
-Groups: Property sector (Retail, Office, Industrial, Residential, Healthcare)
-Why It's Interesting: REITs are ~60% debt-financed, so they're directly exposed to rate changes -- but the
-effect varies dramatically by sector. Retail and Office REITs took a beating in 2022-2023 while Industrial
-(warehouses, logistics) barely flinched. Your analysis quantifies this.
-What Your Models Might Show:
-Fixed effects regression: A 1 percentage point rate hike predicts a ~2.5% decline in REIT returns
-Difference-in-differences: Rate-sensitive sectors (Retail/Office) underperformed resilient sectors
-(Industrial) by ~3.5 pp after the 2022 hike cycle
-VIF confirms low multicollinearity among controls
+## Team
+- Thang Pau and Claude Sonnet 4.5 making the comeback
+
+## Research Question
+How do REIT sector returns respond to Federal Reserve interest rate changes, and which property types are most sensitive?
+
+## Datasets
+- **REIT Master Panel** (course data): `data/raw/REIT_sample_2000_2024_All_Variables.csv`
+  - 47,529 monthly observations from 409 REITs (1986-2024)
+  - Includes returns, market equity, property types, financial ratios
+- **FRED macroeconomic series**: Fed Funds Rate, 30-Year Mortgage Rate, CPI, Unemployment Rate
+  - Fetched via API with 1-month and 3-month lags
+  - Monthly frequency (2005-2024)
+
+## Preliminary Hypotheses
+- H1: 
+
+## How to Run the Pipeline
+1. Place raw REIT data in data/raw/REIT_sample_2000_2024_All_Variables.csv
+2. Run `python code/fetch_reit_data.py`
+3. Run `python code/fetch_fred_data.py`
+4. Run `python code/merge_final_panel.py`
+
+## Outputs
+- Cleaned REIT data: data/processed/reit_data_clean.csv
+- Cleaned FRED data: data/processed/fred_data_clean.csv
+- Final panel: data/final/reit_fred_analysis_panel.csv
+- Summary stats: data/final/summary_statistics.csv
+- Summary report: results/reports/summary_statistics_report.md
