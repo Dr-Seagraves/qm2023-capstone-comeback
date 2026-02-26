@@ -33,7 +33,9 @@ How do REIT sector returns respond to Federal Reserve interest rate changes, and
   - Monthly frequency (2005-2024)
 
 ## Preliminary Hypotheses
-- H1: 
+- H1: Rate cuts improve future REIT returns
+- H2: Long-lease sectors are more rate sensitive
+- H3: Mortgage REITs are most sensitive and exhibit greater return volatility.
 
 ## How to Run the Pipeline
 1. Place raw REIT data in data/raw/REIT_sample_2000_2024_All_Variables.csv

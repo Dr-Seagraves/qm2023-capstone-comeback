@@ -2,6 +2,15 @@
 
 Source: data/final/summary_statistics.csv
 
+## Before/After Row Count
+
+- Before (raw): data/raw/REIT_sample_2000_2024_All_Variables.csv
+- Before row count (raw): 48019
+- After (processed): data/processed/reit_data_clean.csv
+- After row count (processed): 47529
+- After (final): data/final/reit_fred_analysis_panel.csv
+- After row count (final): 47529
+
 ## Table Index
 - Table 1: it permno, rtype, ptype, psub
 - Table 2: date, usdret, usdprc, market_equity

@@ -28,13 +28,10 @@
 - Date range: 1986-12-31 to 2024-12-31
 
 ## Reproducibility Checklist
-- Scripts use relative paths via config_paths.py.
+- Scripts use paths via config_paths.py.
 - Each fetch script prints row counts and summary stats.
-- Merge script validates dimensions and missingness.
+- Merge script validates dimensions.
 
 ## Ethical Considerations
 - Missing values and outlier filtering can drop stressed or thinly traded REITs; review for bias.
 - Macro data alignment assumes monthly timing; sensitivity to lags should be tested.
-
-## Notes
-- FRED series currently use API/demo fallback; replace with official data if required.
